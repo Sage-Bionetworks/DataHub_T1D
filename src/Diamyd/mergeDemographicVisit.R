@@ -17,6 +17,6 @@ mergedData <- demoData %>%
   left_join(visitData, by=c("Patient Number", "Sex", "Age at Baseline", "Treatment"))
 
 ## Write to a file
-write.csv(mergedData, file="Datahub_Diamyd_clinicalMerged.csv")
+write.csv(mergedData, file="DataHub_Diamyd_clinicalMerged.csv")
 
 ## Store in Synapse
