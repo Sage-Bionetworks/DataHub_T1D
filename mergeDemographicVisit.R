@@ -12,10 +12,11 @@ demoData <- fread(getFileLocation(demoFile), data.table=FALSE)
 visitFile <- synGet("syn3536997")
 visitData <- fread(getFileLocation(visitFile), data.table=FALSE)
 
-## Merge them on patient ID
+## Merge on identical columns
 mergedData <- demoData %>% 
   left_join(visitData, by=c("Patient Number", "Sex", "Age at Baseline", "Treatment"))
 
+## Write to a file
+write.csv(mergedData, file="Datahub_Diamyd_clinicalMerged.csv")
+
 ## Store in Synapse
-
-
